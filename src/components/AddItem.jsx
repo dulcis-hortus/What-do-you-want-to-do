@@ -20,7 +20,7 @@ function Input({ onChange, value }) {
   return (
     <input
       className="w-full pl-2 focus:outline-none border-2 rounded-tl-md rounded-bl-md"
-      placeholder="Add Todo"
+      placeholder="What do you want to do?"
       onChange={(e) => onChange(e.target.value)}
       value={value}
     />

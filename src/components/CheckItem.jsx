@@ -36,13 +36,13 @@ function CheckBox({ data, onChange }) {
           darkMode
             ? `${
                 data.checked
-                  ? "text-gray-400 text-xl select-none line-through"
-                  : "text-white text-xl select-none"
+                  ? "text-gray-400 text-xl select-none line-through font-Cafe24Shiningstar"
+                  : "text-white text-xl select-none font-Cafe24Shiningstar"
               }`
             : `${
                 data.checked
-                  ? "text-gray-400 text-xl select-none line-through"
-                  : "text-gray-700 text-xl select-none"
+                  ? "text-gray-400 text-xl select-none line-through font-Cafe24Shiningstar"
+                  : "text-gray-700 text-xl select-none font-Cafe24Shiningstar"
               }`
         }
       >
@@ -55,7 +55,7 @@ function CheckBox({ data, onChange }) {
 function DeleteIcon({ onDelete }) {
   return (
     <div
-      className="p-0.5 bg-gray-500 rounded-full cursor-pointer hover:rotate-45"
+      className="p-0.5 bg-gray-500 rounded-full hover:animate-crackle"
       onClick={onDelete}
     >
       <MdDelete className="text-xl text-white" />

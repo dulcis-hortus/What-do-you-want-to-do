@@ -1,7 +1,7 @@
 import CheckItem from "@/components/CheckItem";
 import AddItem from "@/components/AddItem";
 import { useContext, useEffect, useState } from "react";
-import { ALL, ACTIVE, COMPLETED, DARK, LIGHT } from "@/constant";
+import { ALL, ACTIVE, COMPLETED } from "@/constant";
 import MenuButton from "@/components/MenuButton";
 import { TbMoonFilled } from "react-icons/tb";
 import { MdWbSunny } from "react-icons/md";
@@ -12,10 +12,22 @@ export default function Home() {
   const [todoListByMenu, setTodoListByMenu] = useState([]);
   const [menu, setMenu] = useState(ALL);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const [isMount, setIsMount] = useState(false);
 
   useEffect(() => {
-    handleTodoListByMenu(menu);
-  }, [menu, todoList]);
+    if (localStorage.SAVED_DATA_KEY) {
+      const savedTodoList = JSON.parse(localStorage.SAVED_DATA_KEY);
+      setTodoList(savedTodoList);
+    }
+    setIsMount(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMount) {
+      localStorage.removeItem("SAVED_DATA_KEY");
+      localStorage.SAVED_DATA_KEY = JSON.stringify(todoList);
+    }
+  }, [todoList, isMount]);
 
   const handleTodoListByMenu = (menu) => {
     switch (menu) {
@@ -32,6 +44,10 @@ export default function Home() {
         setTodoListByMenu(todoList);
     }
   };
+
+  useEffect(() => {
+    handleTodoListByMenu(menu);
+  }, [menu, todoList, handleTodoListByMenu]);
 
   const handleChecked = (id, isChecked) => {
     const newTodoList = todoList.map((todo) => {
@@ -83,6 +99,7 @@ export default function Home() {
           data={todo}
           onDelete={handleDelete}
           onChange={handleChecked}
+          key={todo.id}
         />
       ))}
       <div className="mt-5">
