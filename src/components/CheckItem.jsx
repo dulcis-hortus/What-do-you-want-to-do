@@ -1,5 +1,5 @@
 import { DarkModeContext } from "@/context/DarkModeContext";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FaCheckSquare } from "react-icons/fa";
 import { ImCheckboxUnchecked } from "react-icons/im";
 import { MdDelete } from "react-icons/md";
