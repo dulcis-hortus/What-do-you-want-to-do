@@ -1,5 +1,4 @@
-const { createContext } = require("react");
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 export const DarkModeContext = createContext();
 
