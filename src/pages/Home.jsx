@@ -1,17 +1,14 @@
 import CheckItem from "@/components/CheckItem";
 import AddItem from "@/components/AddItem";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Layout from "@/components/Layout";
+import Header from "@/components/Header";
 import { ALL, ACTIVE, COMPLETED } from "@/constant";
-import MenuButton from "@/components/MenuButton";
-import { TbMoonFilled } from "react-icons/tb";
-import { MdWbSunny } from "react-icons/md";
-import { DarkModeContext } from "@/context/DarkModeContext";
 
 export default function Home() {
   const [todoList, setTodoList] = useState([]);
   const [todoListByMenu, setTodoListByMenu] = useState([]);
   const [menu, setMenu] = useState(ALL);
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const [isMount, setIsMount] = useState(false);
 
   useEffect(() => {
@@ -68,32 +65,8 @@ export default function Home() {
   };
 
   return (
-    <main
-      className={
-        darkMode
-          ? "max-w-md border-2 p-4 m-auto mt-20 bg-indigo-800"
-          : "max-w-md border-2 p-4 m-auto mt-20 "
-      }
-    >
-      <div className="mb-6 flex justify-between">
-        <button onClick={toggleDarkMode}>
-          {darkMode ? (
-            <MdWbSunny className="text-2xl text-yellow-500" />
-          ) : (
-            <TbMoonFilled className="text-xl text-yellow-500" />
-          )}
-        </button>
-        <div className="justify-end flex">
-          {[ALL, ACTIVE, COMPLETED].map((value) => (
-            <MenuButton
-              value={value}
-              currentMenu={menu}
-              onClick={setMenu}
-              key={value}
-            />
-          ))}
-        </div>
-      </div>
+    <Layout>
+      <Header menu={menu} setMenu={setMenu} />
       {todoListByMenu?.map((todo) => (
         <CheckItem
           data={todo}
@@ -105,6 +78,6 @@ export default function Home() {
       <div className="mt-5">
         <AddItem onClick={addNewTodo} />
       </div>
-    </main>
+    </Layout>
   );
 }
