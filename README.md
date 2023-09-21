@@ -7,5 +7,6 @@
 - 다크 모드
 
 <img width="483" alt="image" src="https://github.com/dulcis-hortus/to-do-list/assets/48275781/d681a821-65da-416c-b886-6164f89c9ad1">
-<img width="479" alt="image" src="https://github.com/dulcis-hortus/to-do-list/assets/48275781/880c777f-ca4c-4687-8af1-a5bbc618e154">
+<img width="488" alt="image" src="https://github.com/dulcis-hortus/to-do-list/assets/48275781/dc14d0d8-9f7f-468e-a271-53c830490260">
+
 
