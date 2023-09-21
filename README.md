@@ -6,7 +6,6 @@
 - 브라우저(localStorage) 저장
 - 다크 모드
 
-### 배포 url
 [투두 리스트](to-do-list-dulcis-hortus.vercel.app/)
 
 <img width="483" alt="image" src="https://github.com/dulcis-hortus/to-do-list/assets/48275781/d681a821-65da-416c-b886-6164f89c9ad1">
