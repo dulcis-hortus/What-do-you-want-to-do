@@ -7,7 +7,7 @@
 - 다크 모드
 
 ### 배포 url
-[](to-do-list-dulcis-hortus.vercel.app/)
+[투두 리스트](to-do-list-dulcis-hortus.vercel.app/)
 
 <img width="483" alt="image" src="https://github.com/dulcis-hortus/to-do-list/assets/48275781/d681a821-65da-416c-b886-6164f89c9ad1">
 <img width="483" alt="image" src="https://github.com/dulcis-hortus/to-do-list/assets/48275781/dc14d0d8-9f7f-468e-a271-53c830490260">
